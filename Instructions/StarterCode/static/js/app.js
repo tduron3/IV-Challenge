@@ -7,11 +7,11 @@ function unpack(rows, index) {
   function handleSubmit() {
     d3.event.preventDefault();
 
-    var stock = d3.select("#mircrobeinput").node().value;
-    console.log(stock);
+    var microbe = d3.select("#mircrobeinput").node().value;
+    console.log(microbe);
 
     d3.select("#microbeinput").node().value = "";
-    buildPlot(stock);
+    buildPlot(microbe);
 }
 
   function buildPlot(belly){
