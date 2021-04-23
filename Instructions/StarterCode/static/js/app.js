@@ -1,14 +1,24 @@
-var url = 
-`http://robdunnlab.com/projects/belly-button-biodiversity/`;
-
 
 function unpack(rows, index) {
     return rows.map(function(row) {
       return row[index];
     });
   }
+  function handleSubmit() {
+    d3.event.preventDefault();
+
+    var stock = d3.select("#mircrobeinput").node().value;
+    console.log(stock);
+
+    d3.select("#microbeinput").node().value = "";
+    buildPlot(stock);
+}
+
+  function buildPlot(belly){
+
+    var url = `http://robdunnlab.com/projects/belly-button-biodiversity/`;
   
-  function buildPlot() {
+  
     d3.json(url).then(function(data) {
         var name = data.dataset.name;
         var stock = data.dataset.dataset_code;
